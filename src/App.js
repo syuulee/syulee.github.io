@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
+import AnimatedCursor from "react-animated-cursor"
 import data from './portfolioDATA';
 import './main.scss';
 
@@ -34,7 +35,8 @@ const App = () => {
             {/* <Cover /> */}
 
             <header className='header'>
-                2023 lee + portfolio {num} {con}
+                <h1>2022 프론트엔드 포트폴리오</h1>
+                <p className='fix'>Frontend portfolio</p>
             </header>
             <nav className='gnb'>
                 <ul>
@@ -62,10 +64,22 @@ const App = () => {
                 render={({ state, fullpageApi }) => {
                     return (
                         <ReactFullpage.Wrapper>
-                            <div className="section">
+                            <div className="section section_cover">
                                 <div className="inner">
-                                    <h1>포폴 제목</h1>
-                                    <p>포폴설명 구구절절 와르르르</p>
+                                    <h2>I'm the one<br />
+                                        you're looking for<br />
+                                        미숫가루 먹고싶다.<br />
+                                    </h2>
+                                    <div className="topic">
+                                        <p className='top'>감자 감자 왕감자 <br />
+                                            감자 감자 왕감자 <br />
+                                        </p>
+                                        <span className='bottom'>
+                                            감자 감자 왕감자<br />
+                                            감자 감자 왕감자 <br />
+                                        </span>
+                                    </div>
+                                    <div className="circle"></div>
                                     {/* <a href="#portfolio_01">01</a>
                                     <button onClick={() => fullpageApi.moveSectionDown()}>
                                         Click me to move down
@@ -95,6 +109,18 @@ const App = () => {
                     );
                 }}
             />
+            <svg class="cursor" width="220" height="220" viewBox="0 0 220 220">
+                <defs>
+                    <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%"
+                        filterUnits="objectBoundingBox">
+                        <feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp" />
+                        <feOffset dx="-30" result="warpOffset" />
+                        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset" />
+                    </filter>
+                </defs>
+                <circle class="cursor__inner" cx="110" cy="110" r="60" />
+            </svg>
+            <script src="js/Animate.js"></script>
         </div >
     )
 }
