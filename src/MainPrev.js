@@ -5,7 +5,7 @@ import data from './portfolioDATA';
 import './main.scss';
 
 
-const App = () => {
+const Main = () => {
     const [num, setNum] = useState(1);
     const [con, setCon] = useState('cover');
     const [on, setOn] = useState(false);
@@ -125,4 +125,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default Main;
