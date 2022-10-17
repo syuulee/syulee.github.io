@@ -4,7 +4,6 @@ import AnimatedCursor from "react-animated-cursor";
 import useScrollFadeIn from './useScrollFadeIn';
 import { profile, portfolio } from './portfolioDATA';
 import { portfolioSub } from './portfolioSubData';
-import
 import './main.scss';
 
 // portfolio배열에서 title을 빼서 배열을 만들어 쓰겠다.
