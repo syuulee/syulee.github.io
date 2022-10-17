@@ -5,19 +5,77 @@ $mainColor : #333;
 }
 
 .inner {
-    width: 1200px;
+    width: 1300px;
     margin: 0 auto;
 }
 
 .container {
-    width: 1200px;
+    width: 1300px;
     margin: 0 auto;
 }
 
 .FP {
     color: $mainColor;
 
+    .btn {
+        position: fixed;
+        top: 5rem;
+        right: 5rem;
+        z-index: 1000;
+        font-size: 0;
+        width: 3rem;
+        height: 3rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            right: 0.5rem;
+            height: 2px;
+            background: #333;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0.5rem;
+            left: 0.5rem;
+            right: 0.5rem;
+            height: 2px;
+            background: #333;
+        }
+
+        &.on::before {
+            display: none;
+        }
+
+        &.on::after {
+            display: none;
+        }
+
+        span::before,
+        span::after {
+            content: "";
+            position: absolute;
+            top: calc(50% - 1px);
+            left: 0.5rem;
+            right: 0.5rem;
+            height: 2px;
+            background: #333;
+        }
+
+        &.on span::before {
+            transform: rotate(45deg);
+        }
+
+        &.on span::after {
+            transform: rotate(-45deg);
+        }
+    }
+
     .section_cover {
+
         .inner {
             position: relative;
 
@@ -25,8 +83,9 @@ $mainColor : #333;
                 font-size: 25px;
                 font-weight: 700;
                 line-height: 1.4;
-                padding: 80px 0 0 0;
+                padding: 100px 0 0 0;
                 margin: 0 0 250px 0;
+
             }
 
             .topic {
@@ -41,9 +100,9 @@ $mainColor : #333;
                         content: "";
                         position: absolute;
                         top: 55px;
-                        right: 600px;
+                        right: 700px;
                         height: 1px;
-                        width: 1000px;
+                        width: 1200px;
                         background: #333;
                     }
                 }
@@ -92,7 +151,7 @@ $mainColor : #333;
                     width: 10px;
                     height: 10px;
                     clip-path: inset(5% 20% 15% 10%);
-                    background: $mainColor;
+                    background: #006600;
                     transition: width 0.5s;
                 }
             }
@@ -111,6 +170,8 @@ $mainColor : #333;
         .container {
             display: flex;
             gap: 20px;
+            border: 1px solid bisque;
+            height: 600px;
 
             .photo {
                 flex: 2;
@@ -118,11 +179,21 @@ $mainColor : #333;
 
             .desc {
                 flex: 1;
+                padding: 70px 20px;
 
                 .title {
                     font-size: 29px;
                     font-weight: 600;
                     margin: 0 0 10px 0;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        margin: 10px 0;
+                        width: 60px;
+                        height: 1px;
+                        background: #006600;
+                    }
                 }
 
                 .type {
@@ -138,13 +209,14 @@ $mainColor : #333;
                 }
 
                 .color {
-                    font-size: 17px;
-                    font-weight: 400;
                     margin: 0 0 30px 0;
 
                     strong {
                         display: block;
                         margin: 0 0 5px 0;
+                        font-size: 17px;
+                        font-weight: 500;
+                        text-transform: uppercase;
                     }
 
                     ol {
@@ -152,10 +224,42 @@ $mainColor : #333;
                         gap: 5px;
 
                         li {
-                            width: 20px;
-                            height: 20px;
+                            width: 15px;
+                            height: 15px;
                             border-radius: 50%;
                             font-size: 0;
+                        }
+                    }
+                }
+
+                .link {
+                    button {
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        border: none;
+                        outline: none;
+                        padding: 5px 20px;
+                        border-radius: 10px;
+                        background: none;
+                        border: 1px solid #333;
+                    }
+                }
+
+                .skill {
+                    margin: 0 0 20px 0;
+
+                    strong {
+                        display: block;
+                        font-size: 17px;
+                        font-weight: 500;
+                        margin: 0 0 5px 0;
+                        text-transform: uppercase;
+                    }
+
+                    ol {
+                        li {
+                            margin: 0 0 5px 0;
+                            font-size: 15px;
                         }
                     }
                 }
@@ -202,12 +306,12 @@ $mainColor : #333;
 
 .cover_open {
     position: fixed;
-    top: 5rem;
-    right: 5rem;
+    top: 50px;
+    right: 50px;
     z-index: 1000;
     font-size: 0;
-    width: 3rem;
-    height: 3rem;
+    width: 30px;
+    height: 30px;
 
     &::before {
         content: "";
@@ -253,7 +357,6 @@ $mainColor : #333;
 }
 
 .cover_open.on {
-
     &::before {
         display: none;
     }
@@ -271,4 +374,28 @@ $mainColor : #333;
             transform: rotate(-45deg);
         }
     }
+}
+
+.last_section {
+    padding: 100px 0 0 0;
+
+    h2 {
+        font-size: 33px;
+        font-weight: 500;
+        margin: 0 0 10px 0;
+    }
+
+    .project_case {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .project {
+            figure {
+                width: 300px;
+            }
+        }
+    }
+
+
 }
