@@ -154,7 +154,7 @@ const Main = () => {
                                                             target='_blank'
                                                         >
                                                             <button>
-                                                                LINK
+                                                                view more
                                                             </button>
                                                         </a>
                                                     </li>
