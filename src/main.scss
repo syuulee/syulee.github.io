@@ -357,6 +357,7 @@ $mainColor : #333;
 }
 
 .cover_open.on {
+
     &::before {
         display: none;
     }

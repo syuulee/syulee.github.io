@@ -4,8 +4,8 @@ import AnimatedCursor from "react-animated-cursor";
 import useScrollFadeIn from './useScrollFadeIn';
 import { profile, portfolio } from './portfolioDATA';
 import { portfolioSub } from './portfolioSubData';
+import
 import './main.scss';
-import Goo from 'gooey-react';
 
 // portfolio배열에서 title을 빼서 배열을 만들어 쓰겠다.
 const ac = portfolio.map(it => it.anchor);
@@ -37,6 +37,7 @@ const Cover = ({ on, setOn }) => {
         </div>
     )
 }
+
 
 const Main = () => {
     const [num, setNum] = useState(1);
