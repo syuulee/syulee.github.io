@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
-
+import { useCallback, useEffect, useRef } from 'react';
 
 const useScrollFadeIn = (direction = 'up', duration = 1, delay = 0) => {
     const dom = useRef();
@@ -16,22 +15,23 @@ const useScrollFadeIn = (direction = 'up', duration = 1, delay = 0) => {
                 return 'translate3d(-50%, 0, 0)';
             default:
                 return;
-        };
+        }
     };
 
     const handleScroll = useCallback(
         ([entry]) => {
-            const { current } = element;
+            const { current } = Element;
             if (entry.isIntersecting) {
                 current.style.transitionProperty = 'all';
                 current.style.transitionDuration = `${duration}s`;
-                current.style.transitionTimingFunction = 'cubic-bezier(0, 0, 0.2, 1)';
+                current.style.transitionTimingFunction =
+                    'cubic-bezier(0, 0, 0.2, 1)';
                 //current.style.transitionDelay = `${delay}s`;
                 current.style.opacity = 1;
                 current.style.transform = 'translate3d(0, 0, 0)';
-            };
+            }
         },
-        [delay, duration],
+        [delay, duration]
     );
 
     useEffect(() => {
@@ -39,7 +39,9 @@ const useScrollFadeIn = (direction = 'up', duration = 1, delay = 0) => {
         const { current } = dom;
 
         if (current) {
-            observer = new IntersectionObserver(handleScroll, { threshold: 0.7 });
+            observer = new IntersectionObserver(handleScroll, {
+                threshold: 0.7,
+            });
             observer.observe(current);
         }
 
