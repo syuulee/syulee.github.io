@@ -1,9 +1,13 @@
-$mainColor : #333;
-$SubColor : #006600;
+$mainColor: #333;
+$SubColor: #006600;
 
-// body {
-//     background: bisque;
-// }
+html,
+body {
+    &,
+    * {
+        cursor: none;
+    }
+}
 
 * {
     outline: 1px solid lavender;
@@ -35,7 +39,7 @@ $SubColor : #006600;
         background: none;
 
         &::before {
-            content: "";
+            content: '';
             position: absolute;
             top: 5px;
             left: -12px;
@@ -48,7 +52,7 @@ $SubColor : #006600;
         }
 
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 11px;
             left: -12px;
@@ -70,7 +74,7 @@ $SubColor : #006600;
 
         span::before,
         span::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 17px;
             left: -12px;
@@ -98,7 +102,6 @@ $SubColor : #006600;
     }
 
     .section_cover {
-
         .inner {
             position: relative;
 
@@ -108,7 +111,6 @@ $SubColor : #006600;
                 line-height: 1.4;
                 padding: 100px 0 0 0;
                 margin: 0 0 250px 0;
-
             }
 
             .topic {
@@ -120,7 +122,7 @@ $SubColor : #006600;
                     margin: 0 0 30px 0;
 
                     &::after {
-                        content: "";
+                        content: '';
                         position: absolute;
                         top: 55px;
                         right: 700px;
@@ -167,7 +169,7 @@ $SubColor : #006600;
                 height: 20px;
 
                 &::after {
-                    content: "";
+                    content: '';
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -218,7 +220,7 @@ $SubColor : #006600;
                     margin: 0 0 10px 0;
 
                     &::after {
-                        content: "";
+                        content: '';
                         display: block;
                         margin: 10px 0;
                         width: 60px;
@@ -274,7 +276,7 @@ $SubColor : #006600;
                         border: 1px solid bisque;
                         outline: none;
                         overflow: hidden !important;
-                        transition: all .3s ease-in-out;
+                        transition: all 0.3s ease-in-out;
                         color: #006600;
                         background: transparent !important;
                         cursor: pointer;
@@ -295,7 +297,7 @@ $SubColor : #006600;
                         }
 
                         &::before {
-                            content: "";
+                            content: '';
                             position: absolute;
                             top: 0;
                             left: 0%;
@@ -305,11 +307,12 @@ $SubColor : #006600;
                             background: bisque;
                             opacity: 1;
                             z-index: -12;
-                            transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+                            transition: all 0.65s
+                                cubic-bezier(0.77, 0, 0.175, 1);
                         }
 
                         &::after {
-                            content: "";
+                            content: '';
                             width: 100%;
                             height: 100%;
                             display: block;
@@ -319,7 +322,8 @@ $SubColor : #006600;
                             opacity: 1;
                             top: 0;
                             z-index: -15;
-                            transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+                            transition: all 0.65s
+                                cubic-bezier(0.77, 0, 0.175, 1);
                         }
                     }
                 }
@@ -422,8 +426,6 @@ $SubColor : #006600;
                     margin: 0 0 20px 0;
                 }
             }
-
-
         }
     }
 }
@@ -443,7 +445,6 @@ $SubColor : #006600;
         font-size: 15px;
         font-weight: 500;
         color: #999;
-        ;
     }
 }
 
@@ -456,9 +457,8 @@ $SubColor : #006600;
     width: 30px;
     height: 30px;
 
-
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 5px;
         left: 3px;
@@ -468,7 +468,7 @@ $SubColor : #006600;
     }
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 5px;
         left: 3px;
@@ -479,7 +479,7 @@ $SubColor : #006600;
 
     span {
         &::before {
-            content: "";
+            content: '';
             position: absolute;
             top: calc(50% - 0.5px);
             left: 3px;
@@ -489,7 +489,7 @@ $SubColor : #006600;
         }
 
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             top: calc(50% - 0.5px);
             left: 3px;
@@ -540,6 +540,4 @@ $SubColor : #006600;
             }
         }
     }
-
-
 }
