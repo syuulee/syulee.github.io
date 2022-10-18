@@ -19,31 +19,40 @@ $mainColor : #333;
 
     .btn {
         position: fixed;
-        top: 5rem;
-        right: 5rem;
+        top: 50px;
+        right: 50px;
         z-index: 1000;
         font-size: 0;
-        width: 3rem;
-        height: 3rem;
+        width: 30px;
+        height: 30px;
+        border: none;
+        outline: none;
+        background: none;
 
         &::before {
             content: "";
             position: absolute;
-            top: 0.5rem;
-            left: 0.5rem;
-            right: 0.5rem;
-            height: 2px;
-            background: #333;
+            top: 5px;
+            left: -12px;
+            // right: 5px;
+            width: 50px;
+            height: 20px;
+            border: 1px solid #006600;
+            border-radius: 50%;
+            z-index: 999;
         }
 
         &::after {
             content: "";
             position: absolute;
-            bottom: 0.5rem;
-            left: 0.5rem;
-            right: 0.5rem;
-            height: 2px;
-            background: #333;
+            top: 11px;
+            left: -12px;
+            // right: 5px;
+            width: 50px;
+            height: 20px;
+            border: 1px solid #006600;
+            border-radius: 50%;
+            z-index: 999;
         }
 
         &.on::before {
@@ -58,19 +67,28 @@ $mainColor : #333;
         span::after {
             content: "";
             position: absolute;
-            top: calc(50% - 1px);
-            left: 0.5rem;
-            right: 0.5rem;
-            height: 2px;
-            background: #333;
+            top: 17px;
+            left: -12px;
+            right: 5px;
+            width: 50px;
+            height: 20px;
+            border: 1px solid #006600;
+            border-radius: 50%;
+            z-index: 999;
+        }
+
+        span::after {
+            border: 1px solid transparent;
         }
 
         &.on span::before {
             transform: rotate(45deg);
+            border: 1px solid #006600;
         }
 
         &.on span::after {
             transform: rotate(-45deg);
+            border: 1px solid #006600;
         }
     }
 
@@ -167,19 +185,27 @@ $mainColor : #333;
     }
 
     .section {
+        &.active .photo {
+            opacity: 1;
+            transform: translateX(0);
+            transition: 2s;
+        }
+
+        .photo {
+            flex: 2;
+            transform: translateX(-500px);
+        }
+
         .container {
             display: flex;
             gap: 20px;
             border: 1px solid bisque;
             height: 600px;
 
-            .photo {
-                flex: 2;
-            }
-
             .desc {
                 flex: 1;
                 padding: 70px 20px;
+                transform: translateY(500px);
 
                 .title {
                     font-size: 29px;
@@ -234,14 +260,62 @@ $mainColor : #333;
 
                 .link {
                     button {
+                        position: relative;
+                        display: inline-block;
+                        padding: 5px 20px;
                         font-size: 15px;
                         text-transform: uppercase;
                         border: none;
+                        border: 1px solid bisque;
                         outline: none;
-                        padding: 5px 20px;
-                        border-radius: 10px;
-                        background: none;
-                        border: 1px solid #333;
+                        overflow: hidden !important;
+                        transition: all .3s ease-in-out;
+                        color: #006600;
+                        background: transparent !important;
+                        cursor: pointer;
+
+                        &:hover {
+                            border: 1px solid transparent;
+                            color: #006600;
+
+                            &::before {
+                                opacity: 1;
+                                transform: translateX(100%);
+                            }
+
+                            &::after {
+                                opacity: 1;
+                                transform: translateX(-100%);
+                            }
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0%;
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            background: bisque;
+                            opacity: 1;
+                            z-index: -12;
+                            transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+                        }
+
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            background: bisque;
+                            position: absolute;
+                            left: 0%;
+                            opacity: 1;
+                            top: 0;
+                            z-index: -15;
+                            transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+                        }
                     }
                 }
 
@@ -264,24 +338,88 @@ $mainColor : #333;
                     }
                 }
             }
+        }
 
+        &.active .desc {
+            opacity: 1;
+            transform: translateY(0);
+            transition: 2s;
         }
     }
 }
 
-.cover {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    background: $mainColor;
-    color: #fff;
-    z-index: 999;
+.cover_page {
+    position: relative;
 
-    &.on {
-        display: block;
+    .cover {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background: bisque;
+        color: #006600;
+        z-index: 999;
+
+        &.on {
+            display: block;
+        }
+
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            gap: 100px;
+
+            .box_title {
+                position: relative;
+                margin: 0 0 100px 0;
+                text-align: center;
+
+                h2 {
+                    font-size: 23px;
+                    font-weight: 700;
+                    margin: 0 0 10px 0;
+                }
+
+                p {
+                    font-size: 17px;
+                    font-weight: 500;
+                }
+
+                span {
+                    position: absolute;
+                    top: 70px;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(-15deg);
+                    border: 1.5px solid #006600;
+                    width: 90px;
+                    height: 30px;
+                    border-radius: 50%;
+                    font-size: 0;
+
+                    &:last-child {
+                        top: 85px;
+                    }
+                }
+            }
+
+            ul {
+                display: flex;
+                gap: 30px;
+
+                li {
+                    font-size: 19px;
+                    font-weight: 500;
+                    margin: 0 0 20px 0;
+                }
+            }
+
+
+        }
     }
 }
 
@@ -312,6 +450,7 @@ $mainColor : #333;
     font-size: 0;
     width: 30px;
     height: 30px;
+
 
     &::before {
         content: "";
@@ -357,7 +496,6 @@ $mainColor : #333;
 }
 
 .cover_open.on {
-
     &::before {
         display: none;
     }
@@ -389,11 +527,11 @@ $mainColor : #333;
     .project_case {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 50px;
 
         .project {
             figure {
-                width: 300px;
+                width: 400px;
             }
         }
     }

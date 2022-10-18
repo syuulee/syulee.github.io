@@ -21,19 +21,31 @@ const Cover = ({ on, setOn }) => {
         }
     }, [])
     return (
-        <div className={`cover ${on ? "on" : ""}`} ref={cover}>
-            <ul>
-                {
-                    portfolio.map((it, idx) => {
-                        return (
-                            <li key={idx} onClick={() => setOn(!on)}>
-                                <a href={`#${it.anchor}`}>{it.anchor}</a>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-        </div>
+        <section className='cover_page'>
+            <div className={`cover ${on ? "on" : ""}`} ref={cover}>
+                <div className="box">
+                    <div className="box_title">
+                        <h2>2022년 내가 만들고 , 내가 뽑은 포트폴리오 리스트(수정)</h2>
+                        <p>Portfolio In 2022</p>
+                        <span className='line'>line</span>
+                        <span className='line_line'>line</span>
+                    </div>
+                    <ul>
+                        {
+                            portfolio.map((it, idx) => {
+                                return (
+                                    <li key={idx} onClick={() => setOn(!on)}>
+                                        <a href={`#${it.anchor}`}>{it.anchor}</a>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
     )
 }
 
@@ -105,7 +117,7 @@ const Main = () => {
                             {
                                 portfolio.map(it => {
                                     return (
-                                        <div className="section">
+                                        <div className="section section_full">
                                             <div className='case'>
                                                 {/* {...animatedItem} */}
                                                 <div className="container"  >
@@ -171,13 +183,8 @@ const Main = () => {
                                                             <img src={it.src} alt={it.title} />
                                                         </figure>
                                                         <ul className="desc">
-                                                            <li className='title'>{it.title}</li>
+                                                            <a href={it.link}><li className='title'>{it.title}</li></a>
                                                             <li className='type'>{it.type}</li>
-                                                            <li className='link'>
-                                                                <a href={it.link} target='_blank'>
-                                                                    <button>view more</button>
-                                                                </a>
-                                                            </li>
                                                         </ul>
                                                     </div>
                                                 )
@@ -190,7 +197,7 @@ const Main = () => {
                     );
                 }}
             />
-            {/* < svg class="cursor" width="220" height="220" viewBox="0 0 220 220" >
+            < svg class="cursor" width="220" height="220" viewBox="0 0 220 220" >
                 <defs>
                     <filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%"
                         filterUnits="objectBoundingBox">
@@ -201,7 +208,7 @@ const Main = () => {
                 </defs>
                 <circle class="cursor__inner" cx="110" cy="110" r="60" />
             </svg>
-            <script src="js/Animate.js"></script> */}
+            <script src="js/Animate.js"></script>
         </div >
     )
 }
