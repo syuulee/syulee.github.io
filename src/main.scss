@@ -3,6 +3,7 @@ $SubColor: #006600;
 
 html,
 body {
+
     &,
     * {
         cursor: none;
@@ -21,6 +22,21 @@ body {
 .container {
     width: 1300px;
     margin: 0 auto;
+}
+
+@keyframes sliding {
+    0% {
+        transform: translateY(0);
+
+    }
+
+    50% {
+        transform: translateY(-1240px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .FP {
@@ -46,7 +62,7 @@ body {
             // right: 5px;
             width: 50px;
             height: 20px;
-            border: 1px solid #006600;
+            border: 1px solid #333;
             border-radius: 50%;
             z-index: 999;
         }
@@ -59,7 +75,7 @@ body {
             // right: 5px;
             width: 50px;
             height: 20px;
-            border: 1px solid #006600;
+            border: 1px solid #333;
             border-radius: 50%;
             z-index: 999;
         }
@@ -81,7 +97,7 @@ body {
             right: 5px;
             width: 50px;
             height: 20px;
-            border: 1px solid #006600;
+            border: 1px solid #333;
             border-radius: 50%;
             z-index: 999;
         }
@@ -92,12 +108,12 @@ body {
 
         &.on span::before {
             transform: rotate(45deg);
-            border: 1px solid #006600;
+            border: 1px solid #333;
         }
 
         &.on span::after {
             transform: rotate(-45deg);
-            border: 1px solid #006600;
+            border: 1px solid #333;
         }
     }
 
@@ -192,6 +208,10 @@ body {
     }
 
     .section {
+        .case {
+            overflow: hidden;
+        }
+
         &.active .photo {
             opacity: 1;
             transform: translateX(0);
@@ -201,7 +221,13 @@ body {
         .photo {
             flex: 2;
             transform: translateX(-500px);
+
+            &:hover img {
+                animation: linear sliding 15s infinite;
+            }
         }
+
+
 
         .container {
             display: flex;
@@ -307,8 +333,7 @@ body {
                             background: bisque;
                             opacity: 1;
                             z-index: -12;
-                            transition: all 0.65s
-                                cubic-bezier(0.77, 0, 0.175, 1);
+                            transition: all 0.65s cubic-bezier(0.77, 0, 0.175, 1);
                         }
 
                         &::after {
@@ -322,8 +347,7 @@ body {
                             opacity: 1;
                             top: 0;
                             z-index: -15;
-                            transition: all 0.65s
-                                cubic-bezier(0.77, 0, 0.175, 1);
+                            transition: all 0.65s cubic-bezier(0.77, 0, 0.175, 1);
                         }
                     }
                 }
