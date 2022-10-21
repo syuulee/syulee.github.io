@@ -172,8 +172,12 @@ const Main = () => {
                             }
                             <div className="section last_section">
                                 <div className="inner">
-                                    <h2>프로젝트</h2>
-                                    <p>Section 2</p>
+                                    <div className="total_project">
+                                        <h2>프로젝트 Project</h2>
+                                        <p>Project 모음집</p>
+                                    </div>
+                                    <span className='ball'>1</span>
+                                    <span className='ball_copy'>2</span>
                                     <ul className='project_case'>
                                         {
                                             portfolioSub.map(it => {

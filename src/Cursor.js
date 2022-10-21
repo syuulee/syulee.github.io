@@ -1,4 +1,5 @@
 import React from 'react';
+import './main.scss'
 import './Cursor.scss';
 
 const Cursor = () => {
@@ -12,6 +13,7 @@ const Cursor = () => {
             cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
         });
     }, []);
+
     return <div className='app_cursor' ref={cursorRef} />;
 };
 
