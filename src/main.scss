@@ -130,20 +130,18 @@ body {
 
         &.on span::before {
             transform: rotate(45deg);
-            border: 1px solid #f1f1f1;
+            border: 1px solid $mainColor;
         }
 
         &.on span::after {
             transform: rotate(-45deg);
-            border: 1px solid #f1f1f1;
+            border: 1px solid $mainColor;
         }
     }
 
     .section_cover {
         .inner {
             position: relative;
-            border-right: 1px solid lavender;
-            border-left: 1px solid lavender;
 
             h2 {
                 font-size: 25px;
@@ -151,7 +149,6 @@ body {
                 line-height: 1.4;
                 padding: 100px 0 0 0;
                 margin: 0 0 250px 0;
-                border-bottom: 1px solid lavender;
             }
 
             .topic {
@@ -180,10 +177,9 @@ body {
                 left: 400px;
                 width: 350px;
                 height: 400px;
-                border-top: 1px solid rgba($mainColor, 0.9);
-                border-left: 1px solid rgba($mainColor, 0.9);
-                border-bottom: 1px solid lavender;
-                border-right: 1px solid lavender;
+                border: 1px solid $mainColor;
+                border-bottom: 1px solid transparent;
+                border-right: 1px solid transparent;
                 border-top-left-radius: 100%;
                 transform: rotate(90deg);
             }
@@ -433,8 +429,8 @@ body {
         left: 0;
         right: 0;
         height: 100vh;
-        background: $mainColor;
-        color: #f1f1f1;
+        background: lavender;
+        color: $mainColor;
         z-index: 999;
 
         &.on {
@@ -470,7 +466,7 @@ body {
                     top: 70px;
                     left: 50%;
                     transform: translateX(-50%) rotate(-15deg);
-                    border: 1.5px solid #f1f1f1;
+                    border: 1.5px solid $mainColor;
                     width: 90px;
                     height: 30px;
                     border-radius: 50%;

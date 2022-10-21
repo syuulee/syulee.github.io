@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import AnimatedCursor from "react-animated-cursor";
 import useScrollFadeIn from './useScrollFadeIn';
 import { profile, portfolio } from './portfolioDATA';
 import { portfolioSub } from './portfolioSubData';
