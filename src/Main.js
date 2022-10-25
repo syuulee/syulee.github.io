@@ -24,7 +24,7 @@ const Cover = ({ on, setOn }) => {
             <div className={`cover ${on ? "on" : ""}`} ref={cover}>
                 <div className="box">
                     <div className="box_title">
-                        <h2>2022년 내가 만들고 , 내가 뽑은 포트폴리오 리스트(수정)</h2>
+                        <h2>2022 포트폴리오 리스트</h2>
                         <p>Portfolio In 2022</p>
                         <span className='line'>line</span>
                         <span className='line_line'>line</span>
@@ -98,12 +98,13 @@ const Main = () => {
                                         비상을 꿈꾸며<br />
                                     </h2>
                                     <div className="topic">
-                                        <p className='top'>감자 감자 왕감자 <br />
-                                            감자 감자 왕감자 <br />
+                                        <p className='top'>
+                                            0과 1의 세계에<br />
+                                            다양한 세상을 담고 싶은
                                         </p>
                                         <span className='bottom'>
-                                            감자 감자 왕감자<br />
-                                            감자 감자 왕감자 <br />
+                                            프론트엔드 개발자 <br />
+                                            이서유의 포트폴리오 <br />
                                         </span>
                                     </div>
                                     <div className="circle"></div>
@@ -176,7 +177,6 @@ const Main = () => {
                                         <p>Project 모음집</p>
                                     </div>
                                     <span className='ball'>1</span>
-                                    <span className='ball_copy'>2</span>
                                     <ul className='project_case'>
                                         {
                                             portfolioSub.map(it => {
